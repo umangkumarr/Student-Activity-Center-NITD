@@ -1,14 +1,13 @@
 import React from 'react'
-
 import AppDev from '../img/AppDev.png'
 
 const Event = () => {
     return (
 
-        <div className="w-[60%] max-w-[1000px]  bg-[#e1e9f1] rounded p-5 m-auto my-6">
+        <div className="w-[60%] max-w-[1000px]  bg-[#e1e9f1] rounded p-5 mx-auto">
             <div className="rounded flex items-center justify-center">
                 <div className="w-[40%] items-right p-2">
-                    <img className="rounded-md border-[2px] border-[#5c5ca5] object-cover h-[300px] w-[300px]" src={AppDev} alt="" ></img>
+                    <img className="rounded-md border-[2px] border-[#5555bd] object-cover h-[300px] w-[300px]" src={AppDev} alt="" ></img>
                 </div>
 
                 <div className="w-[60%]  px-[40px] py-1 ">
@@ -20,7 +19,11 @@ const Event = () => {
                         <div className="text-[12px]">Start at: 6:00 PM</div>
                         <div className="text-[12px]">Venue: LT-2 Admin Block</div>
                     </div>
+
+                    <div className="h-8 mt-5 bg-[#5555a3]  text-[18px] cursor-pointer flex items-center justify-center text-white font-sans">RSVP Event</div>
+
                 </div>
+
             </div>
         </div>
     )
