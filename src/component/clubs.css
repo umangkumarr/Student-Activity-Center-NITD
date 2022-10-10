@@ -1,7 +1,26 @@
- 
 .clubs-container::-webkit-scrollbar {
-    width: 0px;
+    /* width: 0px; */
+    height: 10px;
+    visibility: none;
+ }
+
+ 
+  
+ .clubs-container:hover::-webkit-scrollbar {
+    height: 10px;
+    background-color: #F1F3F6;
+    display: block;
+ }
+ 
+ 
+  .clubs-container:hover::-webkit-scrollbar-track {
+    background: #f1f1f1;
   }
   
-   
+  .clubs-container:hover::-webkit-scrollbar-thumb {
+    background: #888;
+  }
  
+  .clubs-container:hover::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }

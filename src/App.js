@@ -1,11 +1,17 @@
 import { Home } from './component'
-// import Login from './Login/Login'
+import Login from './Login/Login'
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
     <>
-      <Home />
+       <Routes > 
+          <Route path = '/' element = { < Home />}/>
+          <Route path = '/login' element = { < Login  /> }/>
+       </Routes>
+
     </>
+     
   );
 }
 
