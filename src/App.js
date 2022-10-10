@@ -1,10 +1,10 @@
-// import { Home } from './component'
+import { Home } from './component'
 import Login from './Login/Login'
 
 function App() {
   return (
     <>
-      <Login />
+      <Home />
     </>
   );
 }
