@@ -1,5 +1,6 @@
 import React from 'react'
 import ClubCard from './ClubCard'
+import './clubs.css'
 
 const Clubs = () => {
     return (
@@ -10,8 +11,8 @@ const Clubs = () => {
                 <div className="w-[125px] h-2 bg-[#5c5ca5] flex items-center justify-center"></div>
             </div>
 
-            <div className="w-[80%] m-auto flex overflow-x-scroll items-center py-10 gap-12">
-                <div className="px-3 m-auto flex justify-center py-10 gap-10">
+            <div className=" clubs-container w-[80%] m-auto flex overflow-x-scroll items-center py-10 gap-12">
+                <div   className="  px-3 m-auto flex justify-center py-10 gap-10 ">
                     < ClubCard />
                     < ClubCard />
                     < ClubCard />
