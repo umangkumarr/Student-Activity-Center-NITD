@@ -12,7 +12,7 @@ const Event = () => {
                 </div>
 
                 <div className="w-[60%]  px-[40px] py-1 ">
-                    <div className="font-bold text-[20px]">App Developement <span> [ GDSC Club ] </span></div>
+                    <div className="font-bold text-[20px]">App Development <span> [ GDSC Club ] </span></div>
                     <div className="my-4 text-[14px]"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa, deserunt? Accusantium inventore at ut deserunt tempora sequi non labore laudantium quibusdam! Possimus tempora iure delectus quia quis tenetur similique sunt?</div>
                     <div className="font-semibold text-[15px] my-2">Schedule</div>
                     <div className="gapx-4 grid grid-cols-2">
