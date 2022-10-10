@@ -51,6 +51,8 @@ const Login = () => {
                     </div>
 
 
+
+
                     {/* password input */}
                     <div className='w-[80%] m-auto mt-[22px] flex'>
                         <FormControl variant="standard" sx={{width:'100%',height:'48px',background:'#F1F3F6',outline:'none',border:'none'}} >
@@ -67,8 +69,11 @@ const Login = () => {
                     <div className='w-[80%] m-auto mt-[22px]'>
                         <Button className='login-button'  sx={{background:'#1E2772',color:'white',width:'100%'}} >Log In</Button>
                     </div>
+                      
 
-                    <div className='text-center mt-5 '>Forgot password/ Not having password</div>
+
+                      {/* forgot password */}
+                    <div className='text-center mt-5 cursor-pointer'>Forgot password/ Not having password</div>
                 </div>
                
             </div>
