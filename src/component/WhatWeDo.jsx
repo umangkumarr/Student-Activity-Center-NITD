@@ -3,7 +3,7 @@ import WhatWeDoo from '../img/WhatWeDo.png'
 
 const WhatWeDo = () => {
     return (
-        <div className="w-full bg-[#e1e9f1] px-10 py-12">
+        <div id="WhatweDoo" className="w-full bg-[#e1e9f1] px-10 py-12">
             <div className="w-[90%] h-full flex items-center justify-center">
                 <div className="w-[50%] h-full flex items-center justify-center">
                     <img className="h-full max-h-[500px] object-cover" src={WhatWeDoo} alt="logo" />

@@ -1,5 +1,6 @@
 import React from 'react'
-import {MdLogout} from "react-icons/md"
+import { MdLogout } from "react-icons/md"
+import { Link } from 'react-router-dom'
 import Logo from '../img/logo.png'
 
 const Header = () => {
@@ -10,11 +11,11 @@ const Header = () => {
                 <div id="navbar" className="flex">
                     <ul className="flex gap-2 md:gap-5">
                         <li className="cursor-pointer text-[9px] md:text-[17px]">Home</li>
-                        <li className="cursor-pointer text-[9px] md:text-[17px]">About Us</li>
+                        <li className="cursor-pointer text-[9px] md:text-[17px]"> <a href="#faq">About Us</a></li>
                         <li className="cursor-pointer text-[9px] md:text-[17px]">Events</li>
                         <li className="cursor-pointer text-[9px] md:text-[17px]">Tech</li>
                         <li className="cursor-pointer text-[9px] md:text-[17px]">Contacts</li>
-                        <li className="cursor-pointer text-[9px] md:text-[17px]"><MdLogout className="m-[4px]"/></li>
+                        <Link to={"/login"}> <li className="cursor-pointer text-[9px] md:text-[17px]"><MdLogout className="m-[4px]" /></li></Link>
                     </ul>
                 </div>
             </div>

@@ -4,7 +4,7 @@ import { RiLinkedinBoxFill, RiFacebookBoxFill, RiInstagramLine } from "react-ico
 
 const ClubCard = () => {
     return (
-        <div class="w-[300px] rounded-xl shadow-lg bg-white hover:scale-105 ">
+        <div class="w-[300px] rounded-xl shadow-lg bg-white hover:scale-105 cursor-pointer">
             <img class="h-[300px] object-cover rounded-t-xl z-[-2]" src={AppDev} alt="club-banner" />
             <div class="px-6 py-4">
                 <div class="font-bold text-lg mb-2 cursor-pointer">Technical Club</div>

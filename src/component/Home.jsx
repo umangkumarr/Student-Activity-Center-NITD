@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header, WhatWeDo, UpcomingEvents, Clubs, faq as FAQ } from '.'
+import { Header, WhatWeDo, UpcomingEvents, Clubs, FAQ } from '.'
 import Banner from '../img/section.png'
 
 
@@ -7,7 +7,7 @@ const Home = () => {
     return (
         <div>
             <Header />
-            <div className="w-full flex items-center justify-center">
+            <div id="#home" className="w-full flex items-center justify-center">
                 <div className="w-[90%] flex items-center justify-center">
                     <div className="w-[50%] flex items-center justify-center">
                         <div className="relative">

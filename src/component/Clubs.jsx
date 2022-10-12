@@ -17,6 +17,10 @@ const Clubs = () => {
                     < ClubCard />
                     < ClubCard />
                     < ClubCard />
+                    < ClubCard />
+                    < ClubCard />
+                    < ClubCard />
+                    < ClubCard />
                 </div>
 
 

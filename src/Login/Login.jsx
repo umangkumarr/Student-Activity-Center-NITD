@@ -18,8 +18,7 @@ const Login = () => {
     };
     return (
 
-        <Link to={"login"}>
-
+        <div>
             <div className="w-[100%] flex h-[100vh]">
                 {/* Login options */}
                 <div className='md:w-[40%] w-[100%]  shadow-2xl'>
@@ -86,7 +85,7 @@ const Login = () => {
 
                 </div>
             </div>
-        </Link>
+        </div>
     )
 }
 
