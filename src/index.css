@@ -15,6 +15,12 @@ html, body {
   overflow-x: hidden
 }
 
+.accordion {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
