@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import LoginIllustrator  from '../img/login-illustrator.svg'
 import Logo from '../img/logo.png'
 import { CgCardClubs } from 'react-icons/cg';
@@ -8,6 +8,8 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import { getClubs } from '../firebase/firebase';
+
 import './login.css'
 
 const Login = () => {
@@ -15,6 +17,17 @@ const Login = () => {
     const handleChangeSelectedClub = (event) => {
         setSelectedClub(event.target.value);
     };
+    const [allClubs, setAllClubs] = React.useState([]);
+    useEffect(()=>{
+        // setAllClubs((pre)=>{
+        //     return getClubs();
+        // })
+        const dat=getClubs();
+        // console.log(dat[1])
+    },[ ]) 
+ 
+
+
     return (
 
         <div className="w-[100%] flex h-[100vh]">
@@ -38,12 +51,18 @@ const Login = () => {
                                     onChange={handleChangeSelectedClub}
                                 >
                                     <MenuItem value={0}>Select Club</MenuItem>
-                                    <MenuItem value={10}>Technical Club</MenuItem>
+                                    {allClubs.map(()=>{
+                                        return (<>
+                                            <MenuItem value={10}>Technical Club</MenuItem>
+                                        </>)
+                                    })}
+
+                                    {/* <MenuItem value={10}>Technical Club</MenuItem>
                                     <MenuItem value={11}>Technical Club</MenuItem>
                                     <MenuItem value={12}>Technical Club</MenuItem>
                                     <MenuItem value={15}>Technical Club</MenuItem>
                                     <MenuItem value={17}>Technical Club</MenuItem>
-                                    <MenuItem value={18}>Technical Club</MenuItem>
+                                    <MenuItem value={18}>Technical Club</MenuItem> */}
                                     
                                 </Select>    
                         </FormControl>
