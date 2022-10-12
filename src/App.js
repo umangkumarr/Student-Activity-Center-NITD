@@ -1,13 +1,16 @@
 import { Home } from './component'
-import Login from './Login/Login'
+import ProtectedRoute from './Login/ProtectedRoute';
 import { Route, Routes } from 'react-router-dom';
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
     <>
+       <ToastContainer />
        <Routes > 
           <Route path = '/' element = { < Home />}/>
-          <Route path = '/login' element = { < Login /> }/>
+          <Route path = '/admin' element = { < ProtectedRoute /> }/>
        </Routes>
 
     </>

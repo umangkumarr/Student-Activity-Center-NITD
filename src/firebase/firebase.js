@@ -33,27 +33,16 @@ const db=getFirestore();
 // get clubs reference
 const colRef=collection(db,'clubs');
 // get data
-function getClubs(){
-    
-    var clubs=[{}];
-        getDocs(colRef) 
-            .then((snapshots)=>{
-                
-                snapshots.docs?.forEach((doc)=>{
-                        clubs.push({...doc.data(),id:doc.id})
-                    })
-                    console.log('clubs',clubs)
-                   
-            })
-            .catch((err)=>{
-                console.log(err)
-              
-            })
 
-            const mainData=clubs
-            console.log('Main-clubs',mainData)
-            return mainData; 
-
+async function getClubs(){
+         
+           var clubsData= await getDocs(colRef) 
+              var clubs=[]
+              clubsData.docs?.forEach((doc)=>{  
+                 clubs.push({...doc.data(),id:doc.id})   
+              })
+                // console.log(clubs)
+           return await clubs;
 }
 
 

@@ -8,26 +8,55 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import { getClubs } from '../firebase/firebase';
-
+import { getClubs } from '../firebase/firebase'; 
+import {  toast } from 'react-toastify';
 import './login.css'
 
-const Login = () => {
+const Login = ({setIsAdmin}) => {
     const [selectedClub, setSelectedClub] = React.useState(0);
     const handleChangeSelectedClub = (event) => {
         setSelectedClub(event.target.value);
     };
     const [allClubs, setAllClubs] = React.useState([]);
-    useEffect(()=>{
-        // setAllClubs((pre)=>{
-        //     return getClubs();
-        // })
-        const dat=getClubs();
-        // console.log(dat[1])
+    const handleGetClubs= async ()=>{
+        const data= await getClubs();
+        setAllClubs((pre)=>{
+            return data;
+        })
+    }
+    useEffect( ()=>{
+         handleGetClubs();
     },[ ]) 
+    const [password, setPassword] = React.useState('');
+    const handleLogInAdmin=()=>{
+        if(selectedClub===0){
+          toast.error("Please Select club")
+          return;
+         }
+        if(password===''){
+            toast.error("Please Enter password")
+            return;
+         }
+
+        const clubResult=allClubs.filter((clb)=>{
+            return (clb.club_id==selectedClub && clb.club_password==password)
+        })
+
+        if(clubResult?.length){
+             toast.success(`Welcome to ${clubResult[0].club_name}`)
+             setIsAdmin((pre)=>{
+                return true;
+             })
+        }else{
+            toast.error("Wrong Password")
+            return;
+        }
+
+
+
+    }
+
  
-
-
     return (
 
         <div className="w-[100%] flex h-[100vh]">
@@ -51,18 +80,12 @@ const Login = () => {
                                     onChange={handleChangeSelectedClub}
                                 >
                                     <MenuItem value={0}>Select Club</MenuItem>
-                                    {allClubs.map(()=>{
-                                        return (<>
-                                            <MenuItem value={10}>Technical Club</MenuItem>
-                                        </>)
+                                    {allClubs.map((c)=>{
+                                        return ( 
+                                           <MenuItem key={c.id} value={c.club_id}>{c.club_name}</MenuItem> 
+                                         )
                                     })}
 
-                                    {/* <MenuItem value={10}>Technical Club</MenuItem>
-                                    <MenuItem value={11}>Technical Club</MenuItem>
-                                    <MenuItem value={12}>Technical Club</MenuItem>
-                                    <MenuItem value={15}>Technical Club</MenuItem>
-                                    <MenuItem value={17}>Technical Club</MenuItem>
-                                    <MenuItem value={18}>Technical Club</MenuItem> */}
                                     
                                 </Select>    
                         </FormControl>
@@ -77,7 +100,7 @@ const Login = () => {
                         <FormControl variant="standard" sx={{width:'100%',height:'48px',background:'#F1F3F6',outline:'none',border:'none'}} >
                             {/* <InputLabel id="select-club-input"   sx={{width:'100%',outline:'none',border:'none'}}>Select Club</InputLabel> */}
                              
-                            <TextField InputProps={{ disableUnderline: true }} sx={{height:40,background:'#F1F3F6'}} id="filled-basic" label="Password" variant="filled" size="small" background="#F1F3F6" />
+                            <TextField InputProps={{ disableUnderline: true }} sx={{height:40,background:'#F1F3F6'}} id="filled-basic" label="Password" variant="filled" size="small" background="#F1F3F6" value={password} onChange={((e)=>{setPassword(e.target.value)})} />
                         </FormControl>
                         <div className='h-[48px] w-[48px] bg-[#1E2772] rounded-tr rounded-br'> <FaLock style={{color:'white',fontSize:'1.5rem',margin:'auto',marginTop:'10px'}}/> </div>
                     </div>
@@ -86,10 +109,10 @@ const Login = () => {
 
                     {/* login button */}
                     <div className='w-[80%] m-auto mt-[22px]'>
-                        <Button className='login-button'  sx={{background:'#1E2772',color:'white',width:'100%'}} >Log In</Button>
+                        <Button className='login-button'  sx={{background:'#1E2772',color:'white',width:'100%'}} onClick={handleLogInAdmin} >Log In</Button>
                     </div>
                       
-
+             
 
                       {/* forgot password */}
                     <div className='text-center mt-5 cursor-pointer'>Forgot password/ Not having password</div>
