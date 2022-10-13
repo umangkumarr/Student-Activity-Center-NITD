@@ -1,6 +1,7 @@
 import React from 'react'
 import { Header, WhatWeDo, UpcomingEvents, Clubs, FAQ } from '.'
 import Banner from '../img/section.png'
+import Footer from './Footer'
 
 
 const Home = () => {
@@ -44,6 +45,7 @@ const Home = () => {
             <UpcomingEvents />
             <Clubs />
             <FAQ />
+            <Footer />
 
         </div >
     )
