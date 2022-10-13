@@ -16,15 +16,14 @@ import { getFirestore,collection,getDocs } from 'firebase/firestore'
 //     appId: process.env.APP_ID,
 //     measurementId: process.env.MEASUREMENT_ID,
 //   };
-  const firebaseConfig2 = {
-    apiKey: "AIzaSyD0lVD-j_dE1P-i2Wf_XJeRdAtb0Ya75yY",
-    authDomain: "student-activity-center-d3de7.firebaseapp.com",
-    projectId: "student-activity-center-d3de7",
-    storageBucket: "student-activity-center-d3de7.appspot.com",
-    messagingSenderId: "20235687200",
-    appId: "1:20235687200:web:8328dbd15144b2cab97345",
-    measurementId: "G-K5XQX6LQL2"
-  };
+const firebaseConfig2 = {
+  apiKey: "AIzaSyAxAXqr5T6ILjpqyOvCHMaOdb3XCCkkrLk",
+  authDomain: "student-activity-center-38c22.firebaseapp.com",
+  projectId: "student-activity-center-38c22",
+  storageBucket: "student-activity-center-38c22.appspot.com",
+  messagingSenderId: "744434993637",
+  appId: "1:744434993637:web:41cd222beb5adb8f8a470c"
+};
 // Initialize Firebase
 initializeApp(firebaseConfig2);
 
