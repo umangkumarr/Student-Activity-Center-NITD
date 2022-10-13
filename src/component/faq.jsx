@@ -49,7 +49,7 @@ const FAQ = () => {
                                             <h3 className={`text-lg font-semibold leading-normal`}>How to support any Club?</h3>
 
                                             <div ref={contentRef1} className="accordion">
-                                                <p className="text-gray-600 font-medium ">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit quos reiciendis maiores reprehenderit non eveniet quas vitae magnam fuga? Facere odit tempore provident quam. Excepturi rem accusamus fugit hic ipsum.</p>
+                                                <p className="text-gray-600 font-medium mt-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit quos reiciendis maiores reprehenderit non eveniet quas vitae magnam fuga? Facere odit tempore provident quam. Excepturi rem accusamus fugit hic ipsum.</p>
                                             </div>
 
                                         </div>
@@ -71,7 +71,7 @@ const FAQ = () => {
                                             <h3 className={`text-lg font-semibold leading-normal`}>How to get support from any Club?</h3>
 
                                             <div ref={contentRef2} className="accordion">
-                                                <p className="text-gray-600 font-medium ">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit quos reiciendis maiores reprehenderit non eveniet quas vitae magnam fuga? Facere odit tempore provident quam. Excepturi rem accusamus fugit hic ipsum.</p>
+                                                <p className="text-gray-600 font-medium  mt-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit quos reiciendis maiores reprehenderit non eveniet quas vitae magnam fuga? Facere odit tempore provident quam. Excepturi rem accusamus fugit hic ipsum.</p>
                                             </div>
 
                                         </div>

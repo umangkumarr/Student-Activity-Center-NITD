@@ -16,7 +16,7 @@ const Header = () => {
                         <li className="cursor-pointer text-[9px] md:text-[17px]">Events</li>
                         <li className="cursor-pointer text-[9px] md:text-[17px]">Tech</li>
                         <li className="cursor-pointer text-[9px] md:text-[17px]">Contacts</li>
-                        <Link to={"/login"}> <li className="cursor-pointer text-[9px] md:text-[17px]"><MdLogout className="m-[4px]" /></li></Link>
+                        <Link to={"/admin"}> <li className="cursor-pointer text-[9px] md:text-[17px]"><MdLogout className="m-[4px]" /></li></Link>
                     </ul>
                 </div>
             </div>
