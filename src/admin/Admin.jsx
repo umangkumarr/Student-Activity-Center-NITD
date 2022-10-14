@@ -58,10 +58,7 @@ const Admin = ({setIsAdmin}) => {
                     
                 )}
                  
-                 {/* <AdminEvents  />
-                 <AdminEvents  />
-                 <AdminEvents  />
-                 <AdminEvents  /> */}
+                 
 
             </div>
               
