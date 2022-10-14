@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore,collection,getDocs,addDoc,updateDoc,doc } from 'firebase/firestore' 
+import { getFirestore,collection,getDocs,addDoc,updateDoc,deleteDoc,doc } from 'firebase/firestore' 
 import {
   ref,
   uploadBytes,
@@ -89,11 +89,19 @@ const updateEventDataToFirebase = async (id,data) => {
   return result;
 };
 
+// Delete event details in db firebase
+const deleteEventDataFromFirebase = async (id) => {
+  const deleteRef=doc(db,'events',id);
+  const result =await deleteDoc(deleteRef);
+  return result;
+};
+
 
 
 export {  getClubs,
           uploadFileToFirebase,
           uploadEventDataToFirebase,
           getEventDataFromFirebase,
-          updateEventDataToFirebase
+          updateEventDataToFirebase,
+          deleteEventDataFromFirebase
         }

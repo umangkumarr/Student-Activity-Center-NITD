@@ -1,6 +1,8 @@
-import React,{useState} from 'react' 
+import React,{useEffect, useState} from 'react' 
 import AdminEvents from './AdminEvents'
 import AddEvent from './AddEvent'
+import {getEventDataFromFirebase} from '../firebase/firebase'
+
 
 
 const Admin = ({setIsAdmin}) => {
@@ -15,6 +17,17 @@ const Admin = ({setIsAdmin}) => {
             return false;
         })
     }
+    const [event,setEvent]=useState([])
+    const getAllEvents = async () =>{
+        const Result = await getEventDataFromFirebase();
+        setEvent((pre)=>{
+            return Result;
+        })
+    }
+
+    useEffect(()=>{
+        getAllEvents();
+    },[])
 
 
     return (
@@ -28,7 +41,7 @@ const Admin = ({setIsAdmin}) => {
 
             {/* Event listing */}
             <div className='flex p-4 mt-4'> 
-                <div className='text-lg  '>Events</div>
+                <div className='text-lg  '>Approved Events</div>
                 <div className='m-auto mr-0 w-[120px] font-semibold h-12'>
                    {(addingEvent===false)?<div className=" h-10 bg-[#5555a3]  text-[18px] cursor-pointer flex items-center justify-center text-white font-sans" onClick={handleShowAddEvent}>Add Event</div> :''}
                 </div>
@@ -36,11 +49,19 @@ const Admin = ({setIsAdmin}) => {
             <div className='p-2'>
 
                 {(addingEvent===true)?<AddEvent setAddingEvent={setAddingEvent} />:''}
+
+                {(event.length===0)?'No Events Available / Loading Events':(
+
+                   event.map((eve,index)=>{
+                    return  <AdminEvents eventData={eve} key={index+102} updateEvents={getAllEvents}/>
+                   })
+                    
+                )}
                  
+                 {/* <AdminEvents  />
                  <AdminEvents  />
                  <AdminEvents  />
-                 <AdminEvents  />
-                 <AdminEvents  />
+                 <AdminEvents  /> */}
 
             </div>
               
