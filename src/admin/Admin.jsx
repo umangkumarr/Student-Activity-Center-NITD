@@ -1,14 +1,18 @@
-import React,{useState} from 'react'
-import { Link } from 'react-router-dom'
+import React,{useState} from 'react' 
 import AdminEvents from './AdminEvents'
 import AddEvent from './AddEvent'
 
 
-const Admin = () => {
+const Admin = ({setIsAdmin}) => {
     const [addingEvent,setAddingEvent]=useState(false)
     const handleShowAddEvent=()=>{
         setAddingEvent((pre)=>{
             return true;
+        })
+    }
+    const handleLogOut=()=>{
+        setIsAdmin((pre)=>{
+            return false;
         })
     }
 
@@ -19,7 +23,7 @@ const Admin = () => {
             {/* admin navbar */}
             <div className='flex p-4'> 
                 <div className='text-lg font-extrabold'>Technical Club</div>
-                <div className='m-auto mr-0 w-[80px] font-semibold'><Link to={"/admin"}>Log Out</Link></div>
+                <div className='m-auto mr-0 w-[80px] font-semibold cursor-pointer ' onClick={handleLogOut}> Log Out </div>
             </div>
 
             {/* Event listing */}
