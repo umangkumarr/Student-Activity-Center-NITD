@@ -33,7 +33,7 @@ const AdminEvents = ({eventData,updateEvents}) => {
           }
         //   console.log(e.target.files[0])
     }
-    const [eventImageUrl,setEventImageUrl]=useState('')
+    const [eventImageUrl,setEventImageUrl]=useState(eventData.event_image_url)
     const addImageToDb= async () =>{
          const ImageUrl =await uploadFileToFirebase(eventImage);
          setEventImageUrl(ImageUrl)
@@ -70,10 +70,6 @@ const AdminEvents = ({eventData,updateEvents}) => {
             return false;
         }
 
-        if(eventImage===null){
-            toast.error("Please Upload Event Image")
-            return false;
-        }
 
         if(eventDescription===''){
             toast.error("Please Enter Event Description")
@@ -100,7 +96,14 @@ const AdminEvents = ({eventData,updateEvents}) => {
         else{
             toast.success("Updating Event");
             hideEditOption()
-            var imageLink = await addImageToDb(eventImage)
+            let imageLink ;
+            if(eventImage!=null){
+                imageLink = await addImageToDb(eventImage)
+                // console.log(imageLink)
+            }else{
+                imageLink=eventImageUrl;
+                // console.log(imageLink)
+            }
             var EventDetails={
                 "event_name":eventName,
                 "event_image_url":imageLink,
@@ -115,6 +118,7 @@ const AdminEvents = ({eventData,updateEvents}) => {
                 "isApprovedDSW":0,
                 "date_and_time": Date.now()
             }
+            // console.log(EventDetails)
             const res= await updateEventToDb(EventDetails);
             updateEvents();
             clearAddEventForm()
@@ -140,7 +144,7 @@ const AdminEvents = ({eventData,updateEvents}) => {
                      </div>
                     <div className="font-semibold text-[15px] my-2">Schedule</div>
                     <div className="gapx-4 grid grid-cols-2">
-                        <div className="text-[12px]">Date: 26-09-22 </div>
+                        <div className="text-[12px]">Date: {eventData.event_start_date} </div>
                         <div className="text-[12px]">Start at: 6:00 PM</div>
                         <div className="text-[12px]">Venue: LT-2 Admin Block</div>
                     </div>

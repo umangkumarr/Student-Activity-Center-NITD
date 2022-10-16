@@ -48,7 +48,7 @@ const Admin = ({setIsAdmin}) => {
             </div>
             <div className='p-2'>
 
-                {(addingEvent===true)?<AddEvent setAddingEvent={setAddingEvent} />:''}
+                {(addingEvent===true)?<AddEvent setAddingEvent={setAddingEvent} updateEvents={getAllEvents}/>:''}
 
                 {(event.length===0)?'No Events Available / Loading Events':(
 

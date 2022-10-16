@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 import {uploadFileToFirebase,uploadEventDataToFirebase} from '../firebase/firebase'
  
 
-const AddEvent = ({setAddingEvent}) => {
+const AddEvent = ({setAddingEvent,updateEvents}) => {
     const handleHideAddEvent=()=>{
         setAddingEvent((pre)=>{
             return false;
@@ -105,7 +105,7 @@ const AddEvent = ({setAddingEvent}) => {
                 "date_and_time": Date.now()
             }
             const res= await addEventToDb(EventDetails);
-            
+            updateEvents()
             clearAddEventForm()
        }
     }

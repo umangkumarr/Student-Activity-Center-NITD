@@ -40,8 +40,9 @@ const db=getFirestore();
 // get clubs reference
 const colRef=collection(db,'clubs');
 const eveRef=collection(db,'events');
+const cRef=collection(db,'coordinators');
 
-// get data
+// get clubs data
 
 async function getClubs(){
          
@@ -97,11 +98,26 @@ const deleteEventDataFromFirebase = async (id) => {
 };
 
 
+// get coordinators data
+
+async function getCoordinators(){
+         
+  var coordinatorsData= await getDocs(cRef) 
+     var coordinators=[]
+     coordinatorsData.docs?.forEach((doc)=>{  
+      coordinators.push({...doc.data(),id:doc.id})   
+     })
+       // console.log(clubs)
+  return await coordinators;
+}
+
+
 
 export {  getClubs,
           uploadFileToFirebase,
           uploadEventDataToFirebase,
           getEventDataFromFirebase,
           updateEventDataToFirebase,
-          deleteEventDataFromFirebase
+          deleteEventDataFromFirebase,
+          getCoordinators
         }
