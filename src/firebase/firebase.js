@@ -98,10 +98,9 @@ const deleteEventDataFromFirebase = async (id) => {
 };
 
 
-// get coordinators data
 
+// get coordinators data
 async function getCoordinators(){
-         
   var coordinatorsData= await getDocs(cRef) 
      var coordinators=[]
      coordinatorsData.docs?.forEach((doc)=>{  

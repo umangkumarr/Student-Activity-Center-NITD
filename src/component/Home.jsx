@@ -1,6 +1,7 @@
 import React from 'react'
 import { Header, WhatWeDo, UpcomingEvents, Clubs, FAQ } from '.'
 import Banner from '../img/section.png'
+import Calender from './Calender'
 import Footer from './Footer'
 
 
@@ -43,6 +44,7 @@ const Home = () => {
 
             <WhatWeDo />
             <UpcomingEvents />
+            <Calender />
             <Clubs />
             <FAQ />
             <Footer />
